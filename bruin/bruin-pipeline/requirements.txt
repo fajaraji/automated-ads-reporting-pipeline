@@ -1,0 +1,3 @@
+kaggle
+pandas
+google-cloud-bigquery
