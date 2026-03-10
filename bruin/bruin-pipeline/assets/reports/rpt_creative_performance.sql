@@ -32,7 +32,9 @@ select
   safe_divide(sum(clicks), nullif(sum(impressions), 0)) as ctr,
   safe_divide(sum(conversions), nullif(sum(clicks), 0)) as conversion_rate,
   safe_divide(sum(ad_spend), nullif(sum(conversions), 0)) as cpa,
-  safe_divide(sum(revenue), nullif(sum(ad_spend), 0)) as roas
+  safe_divide(sum(revenue), nullif(sum(ad_spend), 0)) as roas,
+  sum(ad_spend) as ad_spend,
+  sum(revenue) as revenue
 from all_ads
 group by
   date,
